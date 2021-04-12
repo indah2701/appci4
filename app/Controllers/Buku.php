@@ -11,6 +11,7 @@ class Buku extends BaseController
     protected $bukuModel;
     public function __construct()
     {
+        helper("form");
         $this->BukuModel = new BukuModel();
     }
 
@@ -84,7 +85,7 @@ class Buku extends BaseController
             'penerbit' => $this->request->getPost('penerbit'),
             'sampul' => $this->request->getPost('sampul')
         ];
-        $save = $this->bukuModel->add($data);
+        $this->BukuModel->add($data);
         session()->setFlashdata('pesan', 'Data Berhasil Ditambahkan');
         return redirect()->to('/buku');
     }

@@ -8,7 +8,7 @@ use db;
 class BukuModel extends Model
 {
     protected $table = 'buku';
-    protected $useTimestamps = true;
+    // protected $useTimestamps = true;
     protected $allowedFields = ['judul', 'slug', 'penulis', 'penerbit', 'sampul'];
 
     public function getBuku($slug = false)
@@ -18,6 +18,8 @@ class BukuModel extends Model
         }
         return $this->where(['slug' => $slug])->first();
     }
+
+
     public function add($data)
     {
         $this->db->table('buku')->insert($data);
