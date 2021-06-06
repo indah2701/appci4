@@ -199,6 +199,7 @@ class Buku extends BaseController
             // generate nama file random
             $namaSampul = $fileSampul->getRandomName();
             // pindahkan gambar
+            // menambah detail gambar agar gambar default tidak ikut terhapus
             $fileSampul->move('img', $namaSampul);
             // hapus file sampul lama
             unlink('img/' . $this->request->getVar('sampulLama'));
