@@ -53,7 +53,8 @@ class BaseController extends Controller
 		// Preload any models, libraries, etc, here.
 		//--------------------------------------------------------------------
 		// E.g.: $this->session = \Config\Services::session();
+		session();
 		$this->nama = 'Indah';
-		// $this->bukuModel = new \App\Models\BukuModel();
+		$this->bukuModel = new \App\Models\BukuModel();
 	}
 }
